@@ -1,5 +1,5 @@
 # What is ecchi?
-| category | url | support |
+| Category | Url | Support |
 | --- | --- | --- |
 | SIRO | http://blog.livedoor.jp/kirekawa39-siro/archives/siro-xxxx.html| O
 | 300mium | http://blog.livedoor.jp/kirekawa39-siro/archives/300mium-xxx.html | O
