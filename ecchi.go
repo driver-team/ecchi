@@ -42,8 +42,6 @@ func main() {
             url = siroBaseUrl
         case "-g":
             url = ganaBaseUrl
-        case "-ma":
-            url = maanBaseUrl
         case "-l":
             url = luxuBaseUrl
         case "-d":
