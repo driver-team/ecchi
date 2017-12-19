@@ -67,7 +67,6 @@ func errorMsg() {
         "\tSIRO => ./ecchi -s  START_NUM END_NUM\n" +
         "\tMIUM => ./ecchi -m  START_NUM END_NUM\n" +
         "\tGANA => ./ecchi -g  START_NUM END_NUM\n" +
-        "\tMAAN => ./ecchi -ma START_NUM END_NUM\n" +
         "\tluxu => ./ecchi -l  START_NUM END_NUM\n" +
         "\tdcv  => ./ecchi -d  START_NUM END_NUM\n"
     fmt.Println(message)
