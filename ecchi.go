@@ -19,7 +19,6 @@ var (
     miumBaseUrl = "http://blog.livedoor.jp/kirekawa39-siro/archives/300mium-%03d.html"
     siroBaseUrl = "http://blog.livedoor.jp/kirekawa39-siro/archives/siro-%04d.html"
     ganaBaseUrl = "http://blog.livedoor.jp/kirekawa39-siro/archives/200GANA-%04d.html"
-    maanBaseUrl = "http://blog.livedoor.jp/kirekawa39-siro/archives/300mium-%03d.html"
     luxuBaseUrl = "http://blog.livedoor.jp/kirekawa39-siro/archives/259LUXU-%3d.html"
     dcvBaseUrl  = "http://blog.livedoor.jp/kirekawa39-siro/archives/277dcv-%03d.html"
     regex       *regexp.Regexp
