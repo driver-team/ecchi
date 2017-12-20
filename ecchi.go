@@ -7,7 +7,7 @@ import (
     "log"
     "net/http"
     "os"
-    "path"
+    "path/filepath"
     "regexp"
     "strconv"
     "strings"
@@ -27,7 +27,7 @@ var (
 
 func init() {
     cdir, _ := os.Getwd()
-    root = path.Join(cdir, "images")
+    root = filepath.Join(cdir, "images")
     regex, _ = regexp.Compile(`[0-9a-zA-z]+-\d+`)
 }
 
@@ -75,7 +75,7 @@ func errorMsg() {
 func fetch(baseUrl string, number int) {
     url := fmt.Sprintf(baseUrl, number)
     dirName := regex.FindString(url)
-    dirPath := path.Join(root, dirName)
+    dirPath := filepath.Join(root, dirName)
 
     res, err := http.Get(url)
     if err != nil {
@@ -88,11 +88,11 @@ func fetch(baseUrl string, number int) {
             log.Fatal(err)
         }
         doc.Find("a").Each(func(i int, s *goquery.Selection) {
-            if imageUrl, ok := s.Attr("href"); ok == true {
+            if imageUrl, ok := s.Attr("href"); ok {
                 if strings.HasSuffix(imageUrl, ".jpg") {
                     fileName := getFileName(imageUrl)
                     fmt.Printf("[%s] Downloading : %s...\n", dirName, fileName)
-                    filePath := path.Join(dirPath, fileName)
+                    filePath := filepath.Join(dirPath, fileName)
                     resp, _ := http.Get(imageUrl)
                     fp, _ := os.Create(filePath)
                     io.Copy(fp, resp.Body)
@@ -102,7 +102,7 @@ func fetch(baseUrl string, number int) {
             }
         })
         bq := doc.Find("blockquote")
-        fp, _ := os.Create(path.Join(dirPath, "description.txt"))
+        fp, _ := os.Create(filepath.Join(dirPath, "description.txt"))
         fp.WriteString(bq.Text())
         fp.Close()
     } else {
